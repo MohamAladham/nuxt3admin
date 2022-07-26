@@ -1,0 +1,1 @@
+<script setup lang="ts">definePageMeta({  layout: "admin",});const route = useRoute();console.log(route.params.id);</script><template>  <main class="py-6 bg-surface-secondary">    <div class="container-fluid">      users    </div>  </main></template>

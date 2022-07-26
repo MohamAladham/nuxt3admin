@@ -1,0 +1,1 @@
+<script setup lang="ts">definePageMeta({  layout: "admin",});</script><template>  <main class="py-6 bg-surface-secondary">    <div class="container-fluid">      users    </div>  </main></template>
