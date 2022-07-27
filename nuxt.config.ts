@@ -2,15 +2,12 @@ import {defineNuxtConfig} from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    alias: {
-        "~": "/<rootDir>",
-        "@": "/<rootDir>",
-    },
+    ssr: true,
 
     app: {
         baseURL: "/",
         buildAssetsDir: "/_nuxt/",
-        head:{
+        head: {
             "charset": "utf-8",
             "viewport": "width=device-width, initial-scale=1",
             "meta": [
@@ -27,4 +24,9 @@ export default defineNuxtConfig({
             ],
         },
     },
+
+    buildModules: [
+        // ...
+        '@pinia/nuxt',
+    ],
 })
