@@ -16,9 +16,9 @@ const title = 'Page Title Here';
             <h1 :class="[tabs.length?'mb-0':'mb-5']" class="h2 ls-tight">{{ title }}</h1>
           </div>
           <!-- Actions -->
-          <div class="col-sm-8 col-12 text-sm-start">
-            <div v-if="false" class="mx-n1 text-right">
-              <slot name="buttons"/>
+          <div class="col-sm-8 col-12 text-sm-end">
+            <div id="header_buttons" class="mx-n1">
+              <!--to be teleported-->
             </div>
           </div>
         </div>

@@ -1,1 +1,1 @@
-<script setup lang="ts">definePageMeta({  layout: "admin",});</script><template>      dashboard</template>
+<script setup lang="ts">definePageMeta({  layout: "admin",});</script><template>      <div>        dashboard      </div></template>
