@@ -1,0 +1,1 @@
+<script lang="ts" setup>interface PropsInterface {  titles: {    text: string,    colWidth?: number  }[]}const props = defineProps<PropsInterface>();</script><template>  <table class="table">    <thead>    <AdminUITableSecondaryHead :titles="props.titles"/>    </thead>    <tbody>    <slot/>    </tbody>  </table></template>
