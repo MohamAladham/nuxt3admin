@@ -1,0 +1,1 @@
+<script setup lang="ts">interface PropsInterface {  inputID: string,  required?: boolean,}const props = withDefaults(defineProps<PropsInterface>(), {  required: false});</script><template>  <label :for="inputID" class="form-label">    <slot/>    <span v-if="required" class="text-danger">*</span>  </label></template>
