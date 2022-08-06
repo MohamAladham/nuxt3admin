@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const logo = ref('https://via.placeholder.com/100/b3b3b3?Text=LOGO');
+const logo = ref('');
 const siteName = ref('Site Name');
 </script>
 

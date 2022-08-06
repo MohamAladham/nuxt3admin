@@ -1,1 +1,1 @@
-<script setup lang="ts">definePageMeta({  layout: "admin",});const route = useRoute();console.log(route.params.id);</script><template>      users</template>
+<script setup lang="ts">definePageMeta({  layout: "admin",});const route = useRoute();console.log(route.params.id);</script><template>      <div>        users      </div></template>

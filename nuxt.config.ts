@@ -25,6 +25,12 @@ export default defineNuxtConfig({
         },
     },
 
+    runtimeConfig: {
+
+        public: {
+            apiBase: ''
+        }
+    },
     buildModules: [
         // ...
         '@pinia/nuxt',
