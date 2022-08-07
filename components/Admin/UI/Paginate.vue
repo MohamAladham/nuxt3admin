@@ -31,37 +31,6 @@ const linkClick = (paginationLink) => {
 
 const route = useRoute();
 
-const prepareLink = (link) => {
-  //append GET parameters
-  const paramsCurrent = route.params;
-  let i = 0;
-  return link; //todo
-
-  if (!Array.isArray(route.params)) {
-    return;
-  }
-
-  paramsCurrent.forEach(function (value, key) {
-    if (key === 'page') {
-      return;
-    }
-
-    if (i === 0) {
-      if (!link.indexOf('?')) {
-        link += '?' + key + '=' + value;
-      } else {
-        link += '&' + key + '=' + value;
-      }
-    } else {
-      link += '&' + key + '=' + value;
-    }
-
-    //console.log(value, key);
-    i++;
-  })
-
-  return link;
-}
 </script>
 
 
@@ -83,7 +52,8 @@ const prepareLink = (link) => {
       <nav>
         <ul class="pagination justify-content-end">
           <li v-if="items.links.prev" class="page-item prev-item">
-            <NuxtLink :href="prepareLink(items.links.prev)" class="page-link" @click.prevent="linkClick(items.links.prev)"><i class="bi bi-chevron-left"></i></NuxtLink>
+            <NuxtLink class="page-link" @click.prevent="linkClick(items.links.prev)"><i class="bi bi-chevron-left"></i>
+            </NuxtLink>
           </li>
 
           <template v-for="(link, index) in items.meta.links">
@@ -92,13 +62,14 @@ const prepareLink = (link) => {
                 class="page-item"
                 :class="{'active':link.active}">
 
-              <NuxtLink v-if="link.url" :href="prepareLink(link.url)" @click.prevent="linkClick(link.url)" class="page-link">{{ link.label }}</NuxtLink>
+              <NuxtLink v-if="link.url" @click.prevent="linkClick(link.url)" class="page-link">{{ link.label }}</NuxtLink>
               <NuxtLink v-else href="javascript:;" class="page-link">{{ link.label }}</NuxtLink>
             </li>
           </template>
 
           <li v-if="items.links.next" class="page-item next-item">
-            <NuxtLink :href="prepareLink(items.links.next)" class="page-link" @click.prevent="linkClick(items.links.next)"><i class="bi bi-chevron-right"></i></NuxtLink>
+            <NuxtLink class="page-link" @click.prevent="linkClick(items.links.next)"><i class="bi bi-chevron-right"></i>
+            </NuxtLink>
           </li>
         </ul>
       </nav>

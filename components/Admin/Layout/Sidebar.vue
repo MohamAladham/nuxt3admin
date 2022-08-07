@@ -44,7 +44,7 @@ const links = sidebarLinksStore.SidebarLinks;
         <ul class="navbar-nav mb-md-4">
           <li>
             <a href="#" class="nav-link d-flex align-items-center">
-              <div class="ms-3">
+              <div class="me-3">
                 <div class="position-relative d-inline-block text-white">
                   <img alt="Image Placeholder" :src="userAvatar" class="avatar rounded-circle">
                   <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>

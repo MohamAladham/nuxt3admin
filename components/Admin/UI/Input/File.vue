@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <script setup lang="ts">
 
 interface PropsInterface {
@@ -24,7 +30,7 @@ const emit = defineEmits<{
 
 const inputClass = {
   'border-danger': props.error,
-  'form-control form-control-sm': true
+  'form-control': true
 };
 
 
@@ -110,7 +116,7 @@ watch(() => props.modelValue, (newVariant, oldVariant) => {
     </div>
 
     <div v-if="!modelValue && !preview" class="">
-      <AdminUIButton color="secondary" @click="browse">
+      <AdminUIButton color="secondary" @click="browse" class="m-0">
         Upload File
       </AdminUIButton>
     </div>
