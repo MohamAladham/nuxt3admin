@@ -2,28 +2,21 @@
 import debounce from "lodash/debounce";
 
 interface PropsInterface {
-  filter?: {},
+  search: string;
 }
 
 const props = withDefaults(defineProps<PropsInterface>(), {});
 
-const search = ref('');
+const search = ref(props.search);
 
 
 const emit = defineEmits<{
-  (e: 'update:filter', value: any): void,
-  (e: 'fetchItems'): void,
+  (e: 'update:search', value: string): void,
 }>()
 
 
 const onKeyUp = debounce(() => {
-  let v = {
-    page: 1, // to reset pagination
-    search: search.value
-  };
-
-  emit('update:filter', {...props.filter, ...v});
-  emit('fetchItems');
+  emit('update:search', search.value);
 }, 500)
 </script>
 

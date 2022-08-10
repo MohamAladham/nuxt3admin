@@ -2,15 +2,13 @@
 
 interface PropsInterface {
   items: {},
-  filter?: {},
 }
 
 const props = withDefaults(defineProps<PropsInterface>(), {});
 
 
 const emit = defineEmits<{
-  (e: 'update:filter', value: any): void,
-  (e: 'fetchItems'): void,
+  (e: 'update:page', value: number): void,
 }>()
 
 
@@ -24,12 +22,9 @@ function getParameterByName(name, url = location.href) {
 }
 
 const linkClick = (paginationLink) => {
-  let paginationPage = getParameterByName('page', paginationLink);
-  emit('update:filter', {...props.filter, page: paginationPage});
-  emit('fetchItems');
+  let paginationPage = parseInt(getParameterByName('page', paginationLink));
+  emit('update:page', paginationPage);
 };
-
-const route = useRoute();
 
 </script>
 
