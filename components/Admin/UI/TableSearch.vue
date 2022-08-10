@@ -2,7 +2,7 @@
 import debounce from "lodash/debounce";
 
 interface PropsInterface {
-  search: string;
+  search: string | null;
 }
 
 const props = withDefaults(defineProps<PropsInterface>(), {});
@@ -11,7 +11,7 @@ const search = ref(props.search);
 
 
 const emit = defineEmits<{
-  (e: 'update:search', value: string): void,
+  (e: 'update:search', value: string | null): void,
 }>()
 
 
