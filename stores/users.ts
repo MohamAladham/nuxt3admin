@@ -1,0 +1,1 @@
+import {defineStore} from 'pinia'import {Ref} from "vue";export interface User {}interface UsersState {    items: User[] | Ref,}export const useUsersStore = defineStore({    id: 'users',    state: (): UsersState => {        return {            items: [],        }    },    actions: {},    getters: {},})

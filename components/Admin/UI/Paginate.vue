@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<PropsInterface>(), {});
 
 
 const emit = defineEmits<{
-  (e: 'update:page', value: number): void,
+  (e: 'pageClick', value: number | string): void,
 }>()
 
 
@@ -22,8 +22,8 @@ function getParameterByName(name, url = location.href) {
 }
 
 const linkClick = (paginationLink) => {
-  let paginationPage = parseInt(getParameterByName('page', paginationLink));
-  emit('update:page', paginationPage);
+  let paginationPage = getParameterByName('page', paginationLink);
+  emit('pageClick', paginationPage);
 };
 
 </script>

@@ -11,7 +11,7 @@ interface PropsInterface {
   preview?: string,
   isImg?: boolean,
   accept?: string,
-  modelValue?: any
+  modelValue?: any,
   colWidth?: number,
   label?: string,
   error?: string,
