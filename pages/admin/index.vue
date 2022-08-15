@@ -1,1 +1,1 @@
-<script setup lang="ts">definePageMeta({  layout: "admin",});</script><template>      <div>        dashboard      </div></template>
+<script setup lang="ts">const title = 'Dashboard'useHead({  title: title,})definePageMeta({  title: title,  layout: "admin",});</script><template>  <div>    dashboard  </div></template>
