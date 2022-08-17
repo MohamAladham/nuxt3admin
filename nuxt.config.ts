@@ -25,9 +25,9 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
-
         public: {
-            apiBase: ''
+            backendUrl: "http://localhost:8000",
+            frontendUrl: "http://localhost:3000",
         }
     },
     buildModules: [
