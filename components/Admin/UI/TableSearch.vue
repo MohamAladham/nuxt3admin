@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import debounce from "lodash/debounce";
+import debounce from "lodash/debounce.js";
 
 interface PropsInterface {
   search: string | null;
