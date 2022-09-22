@@ -46,6 +46,7 @@ export async function $larafetch<T, R extends ResponseType = "json">(
         ...options?.headers,
         ...(token && {[CSRF_HEADER]: token}),
         accept: "application/json",
+        //// "content-type":  "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2),
         "content-type": "application/json",
     };
 

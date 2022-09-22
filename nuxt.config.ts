@@ -34,7 +34,7 @@ export default defineNuxtConfig({
         // ...
         '@pinia/nuxt',
     ],
-    autoImports: {
+    imports: {
         dirs: ["./utils"],
     },
 })

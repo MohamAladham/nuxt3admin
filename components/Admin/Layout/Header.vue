@@ -12,7 +12,7 @@ const tabs = [];
         <div class="row align-items-center" :class="{'mb-5':!tabs.length}">
           <div class="col-sm-4 col-12 mb-4 mb-sm-0">
             <!-- Title -->
-            <h1 :class="[tabs.length?'mb-0':'mb-5']" class="h2 ls-tight">{{ $route.meta.title }}</h1>
+            <h1 :class="[tabs.length?'mb-0':'mb-5']" class="h2 ls-tight">{{ 'TODO' }}</h1>
           </div>
           <!-- Actions -->
           <div class="col-sm-8 col-12 text-sm-end">

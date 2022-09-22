@@ -35,6 +35,7 @@ const inputClass = {
 
 
 const fileInput = ref(null);
+const preview = ref<any>(props.preview);
 
 const filesize = (size) => {
   let i = Math.floor(Math.log(size) / Math.log(1024))
@@ -65,8 +66,9 @@ watch(() => props.modelValue, (newVariant, oldVariant) => {
 
   if (props.isImg) {
     reader.onload = function (e) {
-      console.log('result', e.target.result);
       emit('update:preview', e.target.result);
+      preview.value = e.target.result;
+      // console.log(e.target.result);
     }
     reader.readAsDataURL(newVariant);
   }
@@ -94,7 +96,7 @@ watch(() => props.modelValue, (newVariant, oldVariant) => {
     <div class="d-flex">
       <div v-if="preview" class="d-flex">
         <div v-if="isImg">
-          <img ref="preview" :src="preview" width="60">
+          <img :src="preview" width="60">
         </div>
         <div v-else>
           <AdminUIButton color="secondary" target="_blank" :to="preview" icon="bi bi-file">
